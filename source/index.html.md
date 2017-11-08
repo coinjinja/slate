@@ -204,7 +204,7 @@ A JSON object of [ICO Update Payload](#ico-update-payload). Only fields to updat
 
 ### Returns
 
-Returns a [ICO Update](#ico-update) corresponding to your request, and raises an error otherwise.
+Returns an [ICO Update](#ico-update) corresponding to your request, and raises an error otherwise.
 
 ## Get your ICO updates
 
@@ -339,4 +339,4 @@ ID | The ID of the ICO update to retrieve
 
 ### Returns
 
-Returns a [ICO Update](#ico-update) if a valid ID was provided, and raises an error otherwise.
+Returns an [ICO Update](#ico-update) if a valid ID was provided, and raises an error otherwise.
