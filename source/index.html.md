@@ -2,7 +2,6 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - python
   - shell
 
 toc_footers:
@@ -21,17 +20,19 @@ search: true
 
 Welcome to the Coin Jinja API! You can use our API to access coinjinja API endpoints, which can modify information of your ICO project.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 # Authentication
 
 > To authorize, use this code:
 
+<!-- 
 ```python
 import coinjinja
 
 api = coinjinja.authorize('YOUR_API_KEY')
 ```
+-->
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -55,7 +56,7 @@ let api = coinjinja.authorize('YOUR_API_KEY');
 
 > Make sure to replace `YOUR_API_KEY` with your API key.
 
-Coinjinja uses API keys to allow access to the API. You can register a new coinjinja API key at our [developer portal](https://coinjinja.com/developers).
+Coinjinja API keys now are distributed through email, contact [us](mailto:dev@coinjinja.com) with your business email to ask for it.
 
 Coinjinja expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
@@ -68,7 +69,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 # ICO Updates
 
 ## Post a new ICO Update
-
+<!-- 
 ```python
 import coinjinja
 
@@ -77,7 +78,7 @@ ico_update = api.ico_updates.post(
 )
 print(ico_update.id)
 ```
-
+ -->
 ```shell
 curl -X POST "https://coinjinja.com/owner-api/ico-updates" \
   -H "Authorization: YOUR_API_KEY" \
@@ -190,7 +191,7 @@ console.log(ico_update.id)
 
 You can post a update of your ICO project via this endpoint. 
 
-Your update won't be reflected in our website immediately. You can check the review status of the update using the [Get a Specific ICO Update](#get-a-specific-ico-update) API with the update ID given in the response of your request.
+Your update won't be reflected in our website immediately. You can check the review status of the update using the [Get a specific ICO update](#get-a-specific-ico-update) API with the update ID given in the response of your request.
 
 ### HTTP Request
 
@@ -200,14 +201,16 @@ Your update won't be reflected in our website immediately. You can check the rev
 
 A JSON object of [ICO Update Payload](#ico-update-payload). Only fields to update are needed.
 
-## Get Your ICO Updates
+## Get your ICO updates
 
+<!-- 
 ```python
 import coinjinja
 
 api = coinjinja.authorize('YOUR_API_KEY')
 api.ico_updates.get()
 ```
+ -->
 
 ```shell
 curl "https://coinjinja.com/owner-api/ico-updates"
@@ -264,14 +267,16 @@ This endpoint retrieves your latest ICO updates.
 
 `GET https://coinjinja.com/owner-api/ico-updates`
 
-## Get a Specific ICO Update
+## Get a specific ICO update
 
+<!-- 
 ```python
 import coinjinja
 
 api = coinjinja.authorize('YOUR_API_KEY')
 api.ico_updates.get('abcdef')
 ```
+-->
 
 ```shell
 curl "http://example.com/api/ico_updates/abcdef"
