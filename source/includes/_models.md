@@ -38,7 +38,7 @@ token_for_sale | string | Token for sale
 token_type | string | Token type, e.g. `ERC20`
 video | url | The video link of your project
 team | [object] | Your team members, see [Team Member](#team-member)
-urls | object | Links for website, white paper, and ocial accounts, see [URL Keys](#url-keys)
+urls | object | Links for website, white paper, and social accounts, see [URL Keys](#url-keys)
 bonus | [object] | Your bonus plan, see [Bonus Item](#bonus-item)
 feedback_email | string | The email address where our review feedback will be sent to
 

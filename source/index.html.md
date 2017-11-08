@@ -11,8 +11,8 @@ toc_footers:
 
 includes:
   - models
-  - errors
   - consts
+  - errors
 
 search: true
 ---
