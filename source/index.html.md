@@ -56,7 +56,7 @@ let api = coinjinja.authorize('YOUR_API_KEY');
 
 > Make sure to replace `YOUR_API_KEY` with your API key.
 
-Coinjinja API keys now are distributed through email, contact [us](mailto:dev@coinjinja.com) with your business email to ask for it.
+Coinjinja API keys now are distributed through email, contact [us](mailto:dev@coinjinja.com) with your business email (@same domain of your website) to ask for it.
 
 Coinjinja expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
