@@ -2,7 +2,18 @@
 
 ## ICO Update
 
-The ICO update model provides fields to update your ICO project. All fields you provided are optional.
+The ICO update model provides review status of your ICO update request.
+
+Field | Type | Description
+----- | ----- | -----
+id | int | The ID of your ICO update
+review_status | string | REVIEWING, UPDATED, REJECTED
+reason | string | The reason why your update was rejected
+created_at | datetime | 
+
+## ICO Update Payload
+
+The ICO update payload model provides fields to update your ICO project. All fields you provided are optional.
 
 Field | Type | Description
 ----- | ----- | -----
@@ -28,12 +39,3 @@ team | object |
 urls | object | 
 bonus | object | 
 feedback_email | string | The email address where our review feedback will be sent to
-
-It also contains other things like review status when in response. You don't need to include these fields when posting an ICO update.
-
-Field | Type | Description
------ | ----- | -----
-id | int | The ID of your ICO update
-review_status | string | REVIEWING, UPDATED, REJECTED
-reason | string | The reason why your update was rejected
-created_at | datetime | 

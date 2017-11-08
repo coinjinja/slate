@@ -2,10 +2,8 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
   - python
-  - javascript
+  - shell
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -28,12 +26,6 @@ We have language bindings in Shell, Ruby, and Python! You can view code examples
 
 > To authorize, use this code:
 
-```ruby
-require 'coinjinja'
-
-api = CoinJinja::APIClient.authorize!('YOUR_API_KEY')
-```
-
 ```python
 import coinjinja
 
@@ -46,11 +38,19 @@ curl "api_endpoint_here"
   -H "Authorization: YOUR_API_KEY"
 ```
 
+<!--
+```ruby
+require 'coinjinja'
+
+api = CoinJinja::APIClient.authorize!('YOUR_API_KEY')
+```
+
 ```javascript
 const coinjinja = require('coinjinja');
 
 let api = coinjinja.authorize('YOUR_API_KEY');
 ```
+-->
 
 > Make sure to replace `YOUR_API_KEY` with your API key.
 
@@ -68,6 +68,85 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 
 ## Post a new ICO Update
 
+```python
+import coinjinja
+
+api = coinjinja.authorize('YOUR_API_KEY')
+ico_update = api.ico_updates.post(
+)
+print(ico_update.id)
+```
+
+```shell
+curl -X POST "https://coinjinja.com/owner-api/ico-updates" \
+  -H "Authorization: YOUR_API_KEY" \
+  -d '{
+  "accept_coins": ["BTC", "ETH"],
+  "banner": "http://abc.io/images/banner.png",
+  "slogan": "A great ICO!",
+  "excerpt": "Our ICO enables digital security...",
+  "desc": "Create a digital...",
+  "ico_start": "2017-11-01",
+  "ico_end": "2017-11-30",
+  "industries": ["Platform", "Business services"],
+  "initial_price": "1000 ABC",
+  "logo": "http://abc.io/images/banner.png",
+  "platform": "Ethereum",
+  "raised_amount": "100,000 ABC",
+  "sold_tokens": "10,000",
+  "target_amount_max": "100,000,000 ABC",
+  "target_amount_min": "20,000,000 ABC",
+  "token_for_sale": "100,000,000",
+  "token_type": "ERC20",
+  "video": "http://youtube.com/watch?v=abcdef",
+  "team": [
+    {
+      "avatar": "https://abc.io/avatar/kieran.jpg",
+      "name": "Kieran Booth",
+      "socials": {
+        "LinkedIn": "https://www.linkedin.com/in/kieran-123"
+      },
+      "title": "Co-founder, CEO"
+    },
+    {
+      "avatar": "https://abc.io/avatar/connor.jpg",
+      "name": "Connor Newman",
+      "socials": {
+        "LinkedIn": "https://www.linkedin.com/in/connor-456"
+      },
+      "title": "Co-founder, COO & CTO, Blockchain developer"
+    }
+  ],
+  "urls": {
+    "Facebook": "https://www.facebook.com/abc/",
+    "GitHub": "https://github.com/abc/abc-lib",
+    "Medium": "https://medium.com/@abc/",
+    "Reddit": "https://www.reddit.com/r/abc/",
+    "Slack": "https://abc-slack-invite.herokuapp.com/",
+    "Telegram": "https://t.me/abc",
+    "Twitter": "https://twitter.com/abc",
+    "Website": "http://abc.io/",
+    "White paper": "http://abc.io/docs/wp.pdf"
+  },
+  "bonus": [
+    {
+      "time": "Pre-sale - Day 1",
+      "value": "50%"
+    },
+    {
+      "time": "Pre-sale - Day 2",
+      "value": "40%"
+    },
+    {
+      "time": "Pre-sale - Day 3",
+      "value": "30%"
+    }
+  ],
+  "feedback_email": "stuff@abc.com"
+}'
+```
+
+<!--
 ```ruby
 require 'coinjinja'
 
@@ -77,23 +156,6 @@ ico_update = api.ico_updates.post(
   raised_amount: 123
 })
 puts(ico_update.id)
-```
-
-```python
-import coinjinja
-
-api = coinjinja.authorize('YOUR_API_KEY')
-ico_update = api.ico_updates.post(
-  token_sold=123,
-  raised_amount=123
-)
-print(ico_update.id)
-```
-
-```shell
-curl "https://coinjinja.com/owner-api/ico-updates"
-  -H "Authorization: YOUR_API_KEY"
-  -d "{\"token_sold\":123,\"raised_amount\":123}"
 ```
 
 ```javascript
@@ -106,16 +168,22 @@ let ico_update = api.ico_updates.post({
 });
 console.log(ico_update.id)
 ```
+-->
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 123,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "created_at": "2017-11-01T00:00:00Z",
+  "id": "abcdef",
+  "payload": {
+    "accept_coins": [
+      "BTC"
+    ],
+    ...
+  },
+  "status": "waiting",
+  "updated_at": "2017-11-01T00:00:00Z"
 }
 ```
 
@@ -129,21 +197,9 @@ Your update won't be reflected in our website immediately. You can check the rev
 
 ### Body Parameter
 
-A JSON object with the following fields. Only fields to update are needed.
-
-Field | Description
---------- | -----------
-token_sold | The tokens sold
-raised_amount | The raised amount in USD
+A JSON object of [ICO Update Payload](#ico-update-payload). Only fields to update are needed.
 
 ## Get Your ICO Updates
-
-```ruby
-require 'coinjinja'
-
-api = CoinJinja::APIClient.authorize!('YOUR_API_KEY')
-api.ico_updates.get
-```
 
 ```python
 import coinjinja
@@ -157,30 +213,46 @@ curl "https://coinjinja.com/owner-api/ico-updates"
   -H "Authorization: YOUR_API_KEY"
 ```
 
+<!--
+```ruby
+require 'coinjinja'
+
+api = CoinJinja::APIClient.authorize!('YOUR_API_KEY')
+api.ico_updates.get
+```
+
 ```javascript
 const coinjinja = require('coinjinja');
 
 let api = coinjinja.authorize('YOUR_API_KEY');
 let ico_updates = api.ico_updates.get();
 ```
+-->
 
 > The above command returns JSON structured like this:
 
 ```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "created_at": "2017-11-02T00:00:00Z",
+    "id": "abcdef",
+    "payload": {
+      "accept_coins": [
+        "BTC"
+      ],
+      ...
+    },
+    "status": "waiting",
+    "updated_at": "2017-11-02T00:00:00Z"
   },
   {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "created_at": "2017-11-01T00:00:00Z",
+    "id": "ghijkl",
+    "payload": {
+      ...
+    },
+    "status": "passed",
+    "updated_at": "2017-11-01T00:00:00Z"
   }
 ]
 ```
@@ -193,23 +265,24 @@ This endpoint retrieves your latest ICO updates.
 
 ## Get a Specific ICO Update
 
+```python
+import coinjinja
+
+api = coinjinja.authorize('YOUR_API_KEY')
+api.ico_updates.get('abcdef')
+```
+
+```shell
+curl "http://example.com/api/ico_updates/abcdef"
+  -H "Authorization: YOUR_API_KEY"
+```
+
+<!--
 ```ruby
 require 'coinjinja'
 
 api = CoinJinja::APIClient.authorize!('YOUR_API_KEY')
 api.ico_updates.get(123)
-```
-
-```python
-import coinjinja
-
-api = coinjinja.authorize('YOUR_API_KEY')
-api.ico_updates.get(123)
-```
-
-```shell
-curl "http://example.com/api/ico_updates/123"
-  -H "Authorization: YOUR_API_KEY"
 ```
 
 ```javascript
@@ -218,16 +291,22 @@ const coinjinja = require('coinjinja');
 let api = coinjinja.authorize('YOUR_API_KEY');
 let max = api.ico_updates.get(123);
 ```
+-->
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 123,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "created_at": "2017-11-02T00:00:00Z",
+  "id": "abcdef",
+  "payload": {
+    "accept_coins": [
+      "BTC"
+    ],
+    ...
+  },
+  "status": "waiting",
+  "updated_at": "2017-11-02T00:00:00Z"
 }
 ```
 
