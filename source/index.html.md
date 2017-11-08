@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - models
   - errors
+  - consts
 
 search: true
 ---
@@ -312,11 +313,9 @@ let max = api.ico_updates.get(123);
 
 This endpoint retrieves a specific ICO update.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
 ### HTTP Request
 
-`GET http://example.com/ico_updates/<ID>`
+`GET https://coinjinja.com/owner-api/ico-updates/<ID>`
 
 ### URL Parameters
 
