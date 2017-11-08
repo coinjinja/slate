@@ -289,7 +289,7 @@ html, body {
     float:left;
     color: $lang-select-text;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 4px 16px;
     line-height: 30px;
     outline: 0;
 
@@ -322,6 +322,7 @@ html, body {
   // to place content above the dark box
   position: relative;
   z-index: 30;
+  margin-bottom: 60px;
 
   &:after {
     content: '';
@@ -421,16 +422,12 @@ html, body {
       padding: 10px;
     }
 
+    tr {
+      border-bottom: 1px solid #eee;
+    }
+
     tr:last-child {
       border-bottom: 1px solid #ccc;
-    }
-
-    tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
-    }
-
-    tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
     }
   }
 
@@ -445,6 +442,11 @@ html, body {
   p, li, dt, dd {
     line-height: 1.6;
     margin-top: 0;
+  }
+
+  a {
+    color: #4a81fd;
+    text-decoration: none;
   }
 
   img {

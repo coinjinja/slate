@@ -68,7 +68,8 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 # ICO Updates
 
 ## Post a new ICO Update
-<!-- 
+
+<!--
 ```python
 import coinjinja
 
@@ -77,7 +78,8 @@ ico_update = api.ico_updates.post(
 )
 print(ico_update.id)
 ```
- -->
+-->
+
 ```shell
 curl -X POST "https://coinjinja.com/owner-api/ico-updates" \
   -H "Authorization: YOUR_API_KEY" \
@@ -200,6 +202,10 @@ Your update won't be reflected in our website immediately. You can check the rev
 
 A JSON object of [ICO Update Payload](#ico-update-payload). Only fields to update are needed.
 
+### Returns
+
+Returns a [ICO Update](#ico-update) corresponding to your request, and raises an error otherwise.
+
 ## Get your ICO updates
 
 <!-- 
@@ -266,6 +272,10 @@ This endpoint retrieves your latest ICO updates.
 
 `GET https://coinjinja.com/owner-api/ico-updates`
 
+### Returns
+
+Returns an array of [ICO Update](#ico-update). If no updates are available, the resulting array will be empty.
+
 ## Get a specific ICO update
 
 <!-- 
@@ -326,3 +336,7 @@ This endpoint retrieves a specific ICO update.
 Parameter | Description
 --------- | -----------
 ID | The ID of the ICO update to retrieve
+
+### Returns
+
+Returns a [ICO Update](#ico-update) if a valid ID was provided, and raises an error otherwise.
