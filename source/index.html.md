@@ -81,7 +81,7 @@ print(ico_update.id)
 -->
 
 ```shell
-curl -X POST "https://coinjinja.com/owner-api/ico-updates" \
+curl -X POST "https://www.coinjinja.com/owner-api/ico-updates" \
   -H "Authorization: YOUR_API_KEY" \
   -d '{
   "accept_coins": ["BTC", "ETH"],
@@ -196,7 +196,7 @@ Your update won't be reflected in our website immediately. You can check the rev
 
 ### HTTP Request
 
-`POST https://coinjinja.com/owner-api/ico-updates`
+`POST https://www.coinjinja.com/owner-api/ico-updates`
 
 ### Body Parameter
 
@@ -218,7 +218,7 @@ api.ico_updates.get()
  -->
 
 ```shell
-curl "https://coinjinja.com/owner-api/ico-updates"
+curl "https://www.coinjinja.com/owner-api/ico-updates"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -270,7 +270,7 @@ This endpoint retrieves your latest ICO updates.
 
 ### HTTP Request
 
-`GET https://coinjinja.com/owner-api/ico-updates`
+`GET https://www.coinjinja.com/owner-api/ico-updates`
 
 ### Returns
 
@@ -329,7 +329,7 @@ This endpoint retrieves a specific ICO update.
 
 ### HTTP Request
 
-`GET https://coinjinja.com/owner-api/ico-updates/<ID>`
+`GET https://www.coinjinja.com/owner-api/ico-updates/<ID>`
 
 ### URL Parameters
 
