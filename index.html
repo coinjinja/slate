@@ -196,25 +196,22 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+    <link href="stylesheets/screen-1a6f9615.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-607d6b95.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-e77be85d.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-white-682079a5.svg" class="logo" alt="Logo white" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -228,16 +225,44 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#ico-updates" class="toc-h1 toc-link" data-title="ICO Updates">ICO Updates</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#post-a-new-ico-update" class="toc-h2 toc-link" data-title="Post a new ICO Update">Post a new ICO Update</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#get-your-ico-updates" class="toc-h2 toc-link" data-title="Get your ICO updates">Get your ICO updates</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#get-a-specific-ico-update" class="toc-h2 toc-link" data-title="Get a specific ICO update">Get a specific ICO update</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#models" class="toc-h1 toc-link" data-title="Models">Models</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ico-update" class="toc-h2 toc-link" data-title="ICO Update">ICO Update</a>
+                  </li>
+                  <li>
+                    <a href="#ico-update-payload" class="toc-h2 toc-link" data-title="ICO Update Payload">ICO Update Payload</a>
+                  </li>
+                  <li>
+                    <a href="#team-member" class="toc-h2 toc-link" data-title="Team Member">Team Member</a>
+                  </li>
+                  <li>
+                    <a href="#bonus-item" class="toc-h2 toc-link" data-title="Bonus Item">Bonus Item</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#constants" class="toc-h1 toc-link" data-title="Constants">Constants</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#industries" class="toc-h2 toc-link" data-title="Industries">Industries</a>
+                  </li>
+                  <li>
+                    <a href="#url-keys" class="toc-h2 toc-link" data-title="URL Keys">URL Keys</a>
                   </li>
               </ul>
           </li>
@@ -246,7 +271,6 @@
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -254,133 +278,287 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Coin Jinja API! You can use our API to access coinjinja API endpoints, which can modify information of your ICO project.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<!-- 
+```python
+import coinjinja
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+api = coinjinja.authorize('YOUR_API_KEY')
+```
+-->
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
+<!--
+```ruby
+require 'coinjinja'
+
+api = CoinJinja::APIClient.authorize!('YOUR_API_KEY')
+```
+
+```javascript
+const coinjinja = require('coinjinja');
+
+let api = coinjinja.authorize('YOUR_API_KEY');
+```
+-->
+
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>YOUR_API_KEY</code> with your API key.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Coinjinja API keys now are distributed through email, <a href="mailto:dev@coinjinja.com">contact us</a> with your business email (@same domain of your website) to ask for it.</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Coinjinja expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><code>Authorization: YOUR_API_KEY</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='ico-updates'>ICO Updates</h1><h2 id='post-a-new-ico-update'>Post a new ICO Update</h2>
+<!--
+```python
+import coinjinja
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+api = coinjinja.authorize('YOUR_API_KEY')
+ico_update = api.ico_updates.post(
+)
+print(ico_update.id)
+```
+-->
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.coinjinja.com/owner-api/ico-updates"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "accept_coins": ["BTC", "ETH"],
+  "banner": "http://abc.io/images/banner.png",
+  "slogan": "A great ICO!",
+  "excerpt": "Our ICO enables digital security...",
+  "desc": "Create a digital...",
+  "ico_start": "2017-11-01",
+  "ico_end": "2017-11-30",
+  "industries": ["Platform", "Business services"],
+  "initial_price": "1000 ABC",
+  "logo": "http://abc.io/images/banner.png",
+  "platform": "Ethereum",
+  "raised_amount": "100,000 ABC",
+  "sold_tokens": "10,000",
+  "target_amount_max": "100,000,000 ABC",
+  "target_amount_min": "20,000,000 ABC",
+  "token_for_sale": "100,000,000",
+  "token_type": "ERC20",
+  "video": "http://youtube.com/watch?v=abcdef",
+  "team": [
+    {
+      "avatar": "https://abc.io/avatar/kieran.jpg",
+      "name": "Kieran Booth",
+      "socials": {
+        "LinkedIn": "https://www.linkedin.com/in/kieran-123"
+      },
+      "title": "Co-founder, CEO"
+    },
+    {
+      "avatar": "https://abc.io/avatar/connor.jpg",
+      "name": "Connor Newman",
+      "socials": {
+        "LinkedIn": "https://www.linkedin.com/in/connor-456"
+      },
+      "title": "Co-founder, COO &amp; CTO, Blockchain developer"
+    }
+  ],
+  "urls": {
+    "Facebook": "https://www.facebook.com/abc/",
+    "GitHub": "https://github.com/abc/abc-lib",
+    "Medium": "https://medium.com/@abc/",
+    "Reddit": "https://www.reddit.com/r/abc/",
+    "Slack": "https://abc-slack-invite.herokuapp.com/",
+    "Telegram": "https://t.me/abc",
+    "Twitter": "https://twitter.com/abc",
+    "Website": "http://abc.io/",
+    "White paper": "http://abc.io/docs/wp.pdf"
+  },
+  "bonus": [
+    {
+      "time": "Pre-sale - Day 1",
+      "value": "50%"
+    },
+    {
+      "time": "Pre-sale - Day 2",
+      "value": "40%"
+    },
+    {
+      "time": "Pre-sale - Day 3",
+      "value": "30%"
+    }
+  ],
+  "feedback_email": "stuff@abc.com"
+}'</span>
 </code></pre>
+<!--
+```ruby
+require 'coinjinja'
+
+api = CoinJinja::APIClient.authorize!('YOUR_API_KEY')
+ico_update = api.ico_updates.post(
+  token_sold: 123,
+  raised_amount: 123
+})
+puts(ico_update.id)
+```
+
+```javascript
+const coinjinja = require('coinjinja');
+
+let api = coinjinja.authorize('YOUR_API_KEY');
+let ico_update = api.ico_updates.post({
+  token_sold: 123,
+  raised_amount: 123
+});
+console.log(ico_update.id)
+```
+-->
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"accept_coins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"BTC"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"waiting"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T00:00:00Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>You can post a update of your ICO project via this endpoint. </p>
+
+<p>Your update won&#39;t be reflected in our website immediately. You can check the review status of the update using the <a href="#get-a-specific-ico-update">Get a specific ICO update</a> API with the update ID given in the response of your request.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://www.coinjinja.com/owner-api/ico-updates</code></p>
+<h3 id='body-parameter'>Body Parameter</h3>
+<p>A JSON object of <a href="#ico-update-payload">ICO Update Payload</a>. Only fields to update are needed.</p>
+<h3 id='returns'>Returns</h3>
+<p>Returns an <a href="#ico-update">ICO Update</a> corresponding to your request, and raises an error otherwise.</p>
+<h2 id='get-your-ico-updates'>Get your ICO updates</h2>
+<!-- 
+```python
+import coinjinja
+
+api = coinjinja.authorize('YOUR_API_KEY')
+api.ico_updates.get()
+```
+ -->
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.coinjinja.com/owner-api/ico-updates"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+<!--
+```ruby
+require 'coinjinja'
+
+api = CoinJinja::APIClient.authorize!('YOUR_API_KEY')
+api.ico_updates.get
+```
+
+```javascript
+const coinjinja = require('coinjinja');
+
+let api = coinjinja.authorize('YOUR_API_KEY');
+let ico_updates = api.ico_updates.get();
+```
+-->
+
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-02T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"accept_coins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"BTC"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"waiting"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-02T00:00:00Z"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghijkl"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T00:00:00Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<p>This endpoint retrieves your latest ICO updates.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.coinjinja.com/owner-api/ico-updates</code></p>
+<h3 id='returns-2'>Returns</h3>
+<p>Returns an array of <a href="#ico-update">ICO Update</a>. If no updates are available, the resulting array will be empty.</p>
+<h2 id='get-a-specific-ico-update'>Get a specific ICO update</h2>
+<!-- 
+```python
+import coinjinja
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+api = coinjinja.authorize('YOUR_API_KEY')
+api.ico_updates.get('abcdef')
+```
+-->
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/ico_updates/abcdef"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
+<!--
+```ruby
+require 'coinjinja'
+
+api = CoinJinja::APIClient.authorize!('YOUR_API_KEY')
+api.ico_updates.get(123)
+```
+
+```javascript
+const coinjinja = require('coinjinja');
+
+let api = coinjinja.authorize('YOUR_API_KEY');
+let max = api.ico_updates.get(123);
+```
+-->
+
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-02T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"accept_coins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"BTC"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"waiting"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-02T00:00:00Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p>This endpoint retrieves a specific ICO update.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.coinjinja.com/owner-api/ico-updates/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -390,52 +568,365 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>The ID of the ICO update to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h3 id='returns-3'>Returns</h3>
+<p>Returns an <a href="#ico-update">ICO Update</a> if a valid ID was provided, and raises an error otherwise.</p>
+<h1 id='models'>Models</h1><h2 id='ico-update'>ICO Update</h2>
+<p>The ICO update model provides review status of your ICO update request.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>id</td>
+<td>string</td>
+<td>The ID of your ICO update</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>object</td>
+<td>The content of your request</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>One of <code>waiting</code>, <code>passed</code> and <code>rejected</code></td>
+</tr>
+<tr>
+<td>review</td>
+<td>string</td>
+<td>The review message, may including the reason why your update was rejected</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>Created time</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>Updated time</td>
+</tr>
+</tbody></table>
+<h2 id='ico-update-payload'>ICO Update Payload</h2>
+<p>The ICO update payload model provides fields to update your ICO project. All fields you provided are optional.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accept_coins</td>
+<td>[string]</td>
+<td>Accept coins, e.g. <code>[&quot;BTC&quot;, &quot;ETH&quot;]</code></td>
+</tr>
+<tr>
+<td>banner</td>
+<td>url</td>
+<td>A link to the banner image of your project</td>
+</tr>
+<tr>
+<td>slogan</td>
+<td>string</td>
+<td>The slogan of your project</td>
+</tr>
+<tr>
+<td>excerpt</td>
+<td>string</td>
+<td>A short description of your project</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>html</td>
+<td>A detailed description</td>
+</tr>
+<tr>
+<td>ico_start</td>
+<td>string</td>
+<td>The start time of ICO</td>
+</tr>
+<tr>
+<td>ico_end</td>
+<td>string</td>
+<td>The end time of ICO</td>
+</tr>
+<tr>
+<td>industries</td>
+<td>[string]</td>
+<td>The industries your project belongs to, see <a href="#industries">Industries</a></td>
+</tr>
+<tr>
+<td>initial_price</td>
+<td>string</td>
+<td>The initial price</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>url</td>
+<td>A link to the logo image of your project</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>string</td>
+<td>The platform your ICO runs on</td>
+</tr>
+<tr>
+<td>raised_amount</td>
+<td>string</td>
+<td>The current raised amount</td>
+</tr>
+<tr>
+<td>sold_tokens</td>
+<td>string</td>
+<td>Sold tokens</td>
+</tr>
+<tr>
+<td>target_amount_max</td>
+<td>string</td>
+<td>The maximum target amount</td>
+</tr>
+<tr>
+<td>target_amount_min</td>
+<td>string</td>
+<td>The minimum target amount</td>
+</tr>
+<tr>
+<td>token_for_sale</td>
+<td>string</td>
+<td>Token for sale</td>
+</tr>
+<tr>
+<td>token_type</td>
+<td>string</td>
+<td>Token type, e.g. <code>ERC20</code></td>
+</tr>
+<tr>
+<td>video</td>
+<td>url</td>
+<td>The video link of your project</td>
+</tr>
+<tr>
+<td>team</td>
+<td>[object]</td>
+<td>Your team members, see <a href="#team-member">Team Member</a></td>
+</tr>
+<tr>
+<td>urls</td>
+<td>object</td>
+<td>Links for website, white paper, and social accounts, see <a href="#url-keys">URL Keys</a></td>
+</tr>
+<tr>
+<td>bonus</td>
+<td>[object]</td>
+<td>Your bonus plan, see <a href="#bonus-item">Bonus Item</a></td>
+</tr>
+<tr>
+<td>feedback_email</td>
+<td>string</td>
+<td>The email address where our review feedback will be sent to</td>
+</tr>
+</tbody></table>
+<h2 id='team-member'>Team Member</h2>
+<p>This describes a member of your team.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>avatar</td>
+<td>url</td>
+<td>An image link of headshot/portrait</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Full name</td>
+</tr>
+<tr>
+<td>socials</td>
+<td>object</td>
+<td>Links for social accounts, see <a href="#url-keys">URL Keys</a></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title of the member, e.g. <code>CEO</code></td>
+</tr>
+</tbody></table>
+<h2 id='bonus-item'>Bonus Item</h2>
+<p>This describes an item of your bonus plan.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>time</td>
+<td>string</td>
+<td>For time definition, e.g. <code>Pre-sale</code>, <code>Day 1</code>, or <code>First week</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>The correspond bonus, e.g. <code>50%</code> or <code>100 ABC</code></td>
+</tr>
+</tbody></table>
+<h1 id='constants'>Constants</h1><h2 id='industries'>Industries</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Japanese Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Banking</code></td>
+<td>銀行</td>
+</tr>
+<tr>
+<td><code>Business services</code></td>
+<td>ビジネスサービス</td>
+</tr>
+<tr>
+<td><code>Casino &amp; Gambling</code></td>
+<td>カジノ・ギャンブル</td>
+</tr>
+<tr>
+<td><code>Charity</code></td>
+<td>慈善</td>
+</tr>
+<tr>
+<td><code>Communication</code></td>
+<td>通信</td>
+</tr>
+<tr>
+<td><code>Cryptocurrency</code></td>
+<td>仮想通貨</td>
+</tr>
+<tr>
+<td><code>Education</code></td>
+<td>教育</td>
+</tr>
+<tr>
+<td><code>Energy</code></td>
+<td>エネルギー</td>
+</tr>
+<tr>
+<td><code>Entertainment</code></td>
+<td>エンターテインメント</td>
+</tr>
+<tr>
+<td><code>Health</code></td>
+<td>健康</td>
+</tr>
+<tr>
+<td><code>Infrastructure</code></td>
+<td>インフラ</td>
+</tr>
+<tr>
+<td><code>Internet</code></td>
+<td>インターネット</td>
+</tr>
+<tr>
+<td><code>Investment</code></td>
+<td>投資</td>
+</tr>
+<tr>
+<td><code>Manufacturing</code></td>
+<td>製造</td>
+</tr>
+<tr>
+<td><code>Media</code></td>
+<td>メディア</td>
+</tr>
+<tr>
+<td><code>Platform</code></td>
+<td>プラットフォーム</td>
+</tr>
+<tr>
+<td><code>Real estate</code></td>
+<td>不動産</td>
+</tr>
+<tr>
+<td><code>Retail</code></td>
+<td>小売</td>
+</tr>
+<tr>
+<td><code>Software</code></td>
+<td>ソフトウェア</td>
+</tr>
+<tr>
+<td><code>Sports</code></td>
+<td>スポーツ</td>
+</tr>
+<tr>
+<td><code>Tourism</code></td>
+<td>観光</td>
+</tr>
+<tr>
+<td><code>Other</code></td>
+<td>その他</td>
+</tr>
+</tbody></table>
+<h2 id='url-keys'>URL Keys</h2>
+<p>Available keys for URLs of website, white paper, and social accounts</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Website</code></td>
+</tr>
+<tr>
+<td><code>White paper</code></td>
+</tr>
+<tr>
+<td><code>BitcoinTalk</code></td>
+</tr>
+<tr>
+<td><code>Facebook</code></td>
+</tr>
+<tr>
+<td><code>Twitter</code></td>
+</tr>
+<tr>
+<td><code>Github</code></td>
+</tr>
+<tr>
+<td><code>Medium</code></td>
+</tr>
+<tr>
+<td><code>Reddit</code></td>
+</tr>
+<tr>
+<td><code>Slack</code></td>
+</tr>
+<tr>
+<td><code>Telegram</code></td>
+</tr>
+<tr>
+<td><code>VKontakte</code></td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<p>The Coin Jinja API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -453,35 +944,23 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The resource requested is not under your administration.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified resource could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>Method Not Allowed -- You tried to access a resource with an invalid method.</td>
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re requesting too fast! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>Internal Server Error -- We had a problem with our server. Please try again later.</td>
 </tr>
 <tr>
 <td>503</td>
@@ -493,9 +972,6 @@ Remember — a happy kitten is an authenticated kitten!
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
