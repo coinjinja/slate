@@ -82,6 +82,7 @@ print(ico_update.id)
 
 ```shell
 curl -X POST "https://www.coinjinja.com/owner-api/ico-updates" \
+  -H "Content-Type: application/json" \
   -H "Authorization: YOUR_API_KEY" \
   -d '{
   "accept_coins": ["BTC", "ETH"],
