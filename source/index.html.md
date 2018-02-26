@@ -102,6 +102,7 @@ curl -X POST "https://www.coinjinja.com/owner-api/ico-updates" \
   "target_amount_min": "20,000,000 ABC",
   "token_for_sale": "100,000,000",
   "token_type": "ERC20",
+  "symbol": "1WO",
   "video": "http://youtube.com/watch?v=abcdef",
   "team": [
     {
