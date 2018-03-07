@@ -85,6 +85,7 @@ curl -X POST "https://www.coinjinja.com/owner-api/ico-updates" \
   -H "Content-Type: application/json" \
   -H "Authorization: YOUR_API_KEY" \
   -d '{
+  "name": "Coin Jinja",
   "accept_coins": ["BTC", "ETH"],
   "banner": "http://abc.io/images/banner.png",
   "slogan": "A great ICO!",
