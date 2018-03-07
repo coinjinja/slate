@@ -19,6 +19,7 @@ The ICO update payload model provides fields to update your ICO project. All fie
 
 Field | Type | Description
 ----- | ----- | -----
+name | string | Company name
 accept_coins | [string] | Accept coins, e.g. `["BTC", "ETH"]`
 banner | url | A link to the banner image of your project
 slogan | string | The slogan of your project
