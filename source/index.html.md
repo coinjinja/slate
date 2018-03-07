@@ -35,7 +35,7 @@ api = coinjinja.authorize('YOUR_API_KEY')
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
+curl "api_endpoint_here" \
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -220,7 +220,7 @@ api.ico_updates.get()
  -->
 
 ```shell
-curl "https://www.coinjinja.com/owner-api/ico-updates"
+curl "https://www.coinjinja.com/owner-api/ico-updates" \
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -290,7 +290,7 @@ api.ico_updates.get('abcdef')
 -->
 
 ```shell
-curl "https://www.coinjinja.com/api/ico_updates/abcdef"
+curl "https://www.coinjinja.com/api/ico_updates/abcdef" \
   -H "Authorization: YOUR_API_KEY"
 ```
 
