@@ -295,7 +295,6 @@ api = coinjinja.authorize('YOUR_API_KEY')
 -->
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
 <!--
@@ -464,7 +463,6 @@ api.ico_updates.get()
 ```
  -->
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.coinjinja.com/owner-api/ico-updates"</span>
-  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
 <!--
@@ -524,8 +522,7 @@ api = coinjinja.authorize('YOUR_API_KEY')
 api.ico_updates.get('abcdef')
 ```
 -->
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/ico_updates/abcdef"</span>
-  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://www.coinjinja.com/api/ico_updates/abcdef"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
 <!--
