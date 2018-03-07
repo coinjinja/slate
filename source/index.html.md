@@ -290,7 +290,7 @@ api.ico_updates.get('abcdef')
 -->
 
 ```shell
-curl "http://www.coinjinja.com/api/ico_updates/abcdef"
+curl "https://www.coinjinja.com/api/ico_updates/abcdef"
   -H "Authorization: YOUR_API_KEY"
 ```
 
